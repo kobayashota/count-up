@@ -24,19 +24,48 @@ class ViewController: UIViewController {
     @IBAction func plus(_ sender: Any) {
         
         //カウントアップさせたい
+        count = count + 1
         
         //ラベルに文字を反映したい（数字）
+        countLabel.text = String(count)
         
-        //色を１０以上になったら黄色に変更したい
+        //もし１０以上になったら、色を黄色に変更したい
+        if count >= 10{
+            
+            changeTextColor()
+            
+        }
+        
         
     }
+    
     @IBAction func minus(_ sender: Any) {
         
         //カウントダウンさせたい
+        count = count - 1
         
         //ラベルに文字を反映したい（数字）
+        countLabel.text = String(count)
         
-        //色を０以下になったら白色に変更したい
+        //もし０以下になったら、色を白色に変更したい
+        if count <= 0 {
+            
+            resetColor()
+            
+        }
+        
+    }
+    
+    //新しくメソッドが作成された
+    func changeTextColor(){
+        
+        countLabel.textColor = .yellow
+        
+    }
+    
+    func resetColor(){
+        
+        countLabel.textColor = .white
         
     }
     
